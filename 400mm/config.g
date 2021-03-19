@@ -29,7 +29,7 @@ M574 Y2 S1 P"^ystop"
 ;M307 H7 A-1 C-1 D-1                      ; Disable heater on PWM channel for BLTouch
 ;M558 P5 X0 Y0 Z1 H5 F300 T6000           ; Set Z probe type to bltouch and the dive height + speeds
 
-  ; New 3.0 bltouch
+; New 3.0 bltouch
 M574 Z0 P"nil" ; no Z endstop switch, free up Z endstop input
 M558 P9 C"^zprobe.in" H5 R1 F120 T6000 A5 S0.02  ;BLTouch connected to Z probe IN pin
 M950 S0 C"duex.pwm5"
@@ -37,18 +37,7 @@ M950 S0 C"duex.pwm5"
 M574 Z1 S0                               ; Set endstops controlled by probe
 
 G31 P50 X0 Y21 Z3.0                      ; Set Z probe trigger value, offset and trigger height
-M557 X15:285 Y15:285 S50                 ; Define mesh grid
-
-
-; Z-Probe
-M574 Z0 P"nil" ; no Z endstop switch, free up Z endstop input
-M558 P9 C"^zprobe.in" H5 R1 F120 T6000 A5 S0.02  ;BLTouch connected to Z probe IN pin
-M950 S0 C"duex.pwm5"
-
-M574 Z1 S0                               ; Set endstops controlled by probe
-
-G31 P50 X0 Y21 Z3.0                      ; Set Z probe trigger value, offset and trigger height
-M557 X15:285 Y15:285 S50                 ; Define mesh grid
+M557 X10:410 Y10:400 S49                 ; Define mesh grid
 
 ; --- drives ---
 M569 P0 S1	; X
